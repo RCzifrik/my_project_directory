@@ -2,12 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\NameRepository;
+use App\Repository\TaskRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: NameRepository::class)]
-class cleaning
+#[ORM\Entity(repositoryClass: TaskRepository::class)]
+class Task
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -17,7 +17,7 @@ class cleaning
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
     #[ORM\Column(length: 300)]

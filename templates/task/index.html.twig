@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add task{% endblock %}
+
+{% block body %}
+<div class="container-lg">
+    <h1>Stoobid</h1>
+
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            {{ form_start(form) }}
+                {{ form_errors(form) }}
+
+                {{ form_row(form.name) }}
+                {{ form_row(form.date) }}
+                {{ form_row(form.description) }}
+
+                {{ form_row(form.save, { 'label': 'Submit' }) }}
+            {{ form_end(form) }}
+        </div>
+        <div class="col-4"></div>
+    </div>
+
+</div>
+
+{% endblock %}
